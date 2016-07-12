@@ -22,8 +22,8 @@ class Project extends BaseModel {
         ];
     }
     
-    public function apis() {
-        return $this->hasMany('App\Models\Api')->withTimestamps();
+    public function endpoints() {
+        return $this->hasMany('App\Models\Endpoint')->withTimestamps();
     }
    
     

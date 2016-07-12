@@ -4,9 +4,9 @@ namespace App\Models;
 
 use App\Models\BaseModel;
 
-class Api extends BaseModel {
+class Endpoint extends BaseModel {
 
-    protected $table = 'apis';
+    protected $table = 'endpoints';
     
     protected $fillable = [
         'title', 'endpoint', 'headers',
@@ -21,7 +21,8 @@ class Api extends BaseModel {
         return [
             'title' => 'required',
             'endpoint' => 'required',
-            'method' => 'required'
+            'method' => 'required',
+            'project_id' => 'required'
         ];
     }
     

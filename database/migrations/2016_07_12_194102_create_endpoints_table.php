@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateApisTable extends Migration
+class CreateEndpointsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateApisTable extends Migration
      */
     public function up()
     {
-        Schema::create('apis', function (Blueprint $table) {
+        Schema::create('endpoints', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('project_id')->unsigned()->index();
             $table->string('title');
@@ -38,6 +38,6 @@ class CreateApisTable extends Migration
      */
     public function down()
     {
-        Schema::drop('apis');
+        Schema::drop('endpoints');
     }
 }
