@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Validator;
 use App\Models\Api;
 
-class ApiController extends Controller {
+class EndpointController extends Controller {
     // exclude controllers from auth
     protected $except = [
         

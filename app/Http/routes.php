@@ -22,7 +22,7 @@ Route::group(
         // user resource to enable show, update, delete etc
         Route::resource('users', 'UserController');
         
-        Route::resource('api', 'ApiController');
+        Route::resource('endpoints', 'EndpointController');
         
         Route::resource('companies', 'CompanyController');
         
