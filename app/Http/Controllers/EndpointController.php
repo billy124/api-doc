@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
-use App\Models\Api;
+use App\Models\Endpoint;
 
 class EndpointController extends Controller {
     // exclude controllers from auth
@@ -19,7 +19,7 @@ class EndpointController extends Controller {
     ];
     
     public function __construct() {
-        $this->model = new Api;
+        $this->model = new Endpoint;
         $this->auth();
     }
 
