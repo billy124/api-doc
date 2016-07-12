@@ -23,4 +23,28 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    public function companies() {
+        return $this->belongsToMany('App\Models\Company');
+    }
+    
+    /**
+     * error messages
+     * @return array
+     */
+    public function messages() {
+        return [];
+    }
+
+    /**
+     * validation rules
+     * @return array
+     */
+    public function rules() {
+        return [
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required',
+        ];
+    }
 }
