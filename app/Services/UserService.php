@@ -5,7 +5,7 @@ namespace App\Services;
 use JWTAuth;
 use App\User;
 
-Class User {
+Class UserService {
     
     public static function generateToken($user) {
         if ($token = JWTAuth::fromUser($user)) {

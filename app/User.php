@@ -25,7 +25,7 @@ class User extends Authenticatable
     ];
     
     public function companies() {
-        return $this->belongsToMany('App\Models\Company');
+        return $this->belongsToMany('App\Models\Company', 'user_company');
     }
     
     /**
@@ -45,6 +45,22 @@ class User extends Authenticatable
             'name' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required',
+            'company_id' => 'required'
         ];
+    }
+    
+    public function updateRules($id = null) {
+        return [
+            'email' => 'required|email|unique:users,email,' . $id
+        ];
+    }
+    
+    /**
+     * Set the user's password with encryption.
+     *
+     * @param  string  $password
+     */
+    public function setPasswordAttribute($password) {
+        $this->attributes['password'] = \Hash::make($password);
     }
 }
